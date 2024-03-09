@@ -23,10 +23,10 @@ calculate_version() {
     echo "v$major.$minor.$patch"
 }
 
-current_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v-1.0.0")
+current_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
 
 case $current_tag in
-    "v-1.0.0") commit_messages=$(git log --pretty=format:"%s") ;;
+    "v0.0.0") commit_messages=$(git log --pretty=format:"%s") ;;
     *) commit_messages=$(git log --pretty=format:"%s" $current_tag...HEAD)
 esac
 
