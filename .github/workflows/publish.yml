@@ -3,16 +3,13 @@ name: Publish
 permissions: write-all
 
 on:
-  pull_request:
-    types:
-      - closed
+  push:
     branches:
       - development
 
 jobs:
   tag:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged }}
 
     outputs:
       build: ${{ steps.createtag.outputs.build }}
