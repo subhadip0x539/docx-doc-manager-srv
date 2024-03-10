@@ -64,4 +64,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docx-doc-manager-srv:${{ steps.tag.outputs.TAG }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/docx-doc-manager-srv:${{ steps.tag.outputs.TAG }} , ${{ secrets.DOCKERHUB_USERNAME }}/docx-doc-manager-srv:latest
